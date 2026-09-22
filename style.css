@@ -1,17 +1,120 @@
-* {
-  box-sizing: border-box;
+body { 
+  background: #0d0e15; 
+  color: #e2e8f0;
+  padding: 1px; 
+  font-family: Arial, Sans-serif;
 }
 
-body {
-  margin: 0;
-  background: #947706;
-  color: #222;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+#all-contents { 
+  max-width: 800px; 
+  margin: auto;
 }
 
-#all-contents {
-  max-width: 1500px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 32px 40px;
+
+nav { 
+  background: #1a1c2a; 
+  margin: 0 auto; 
+  display: flex; 
+  padding: 15px; 
+  margin-bottom: 20px;
+  border-radius: 8px; 
+}
+
+h1 { 
+  display: flex; 
+  align-items: center; 
+  color: #00f0ff;
+  flex: 1; 
+  margin: 0; 
+}
+
+#nav-ul { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  display: flex;
+  align-items: center;
+}
+
+.nav-li { 
+  display: inline-block; 
+  padding: 0 15px;
+}
+
+a { 
+  text-decoration: none; 
+  color: #b55fe6;
+  font-weight: bold;
+  transition: color 0.3s ease; 
+}
+
+main { 
+  background: #1a1c2a;
+  display: flex; 
+  margin-top: 20px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.sidebar { 
+  margin-right: 25px; 
+  padding: 10px;
+  border-right: 1px solid #2d3142;
+}
+
+.sidebar-img { 
+  width: 200px;
+  border-radius: 6px;
+}
+
+.content { 
+  flex: 1; 
+  padding: 15px;
+}
+
+
+#interests { 
+  border: 2px solid #00f0ff; 
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); 
+  padding: 15px; 
+  margin-top: 20px;
+  border-radius: 8px;
+  background: #131520; 
+}
+
+h2, h3 { 
+  margin: 0px;
+  color: #00f0ff; 
+  margin-bottom: 10px;
+  }
+  #portfolio a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: cyan;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #002f3b;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+#portfolio a:hover {
+  background: #000;
+  color: #fff;
+  transform: translateX(4px);
+}
+
+#portfolio a::after {
+  content: "->";
+  font-size: 0.85rem;
+  opacity: 0.4;
+  transition: opacity 0.25s ease;
+  white-space: nowrap;
+}
+
+#portfolio a:hover::after {
+  opacity: 1;
 }

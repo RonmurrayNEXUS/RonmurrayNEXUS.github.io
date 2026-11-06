@@ -24,7 +24,7 @@ var Gamification = (function () {
   var originalCircles = []; // Store original circle configurations for restart
   var countdownInProgress = false; // Prevent multiple countdowns
   var gameStartTime = null; // Track when the game actually starts
-  var INVINCIBILITY_DURATION = 5000; // 5 seconds in milliseconds
+  var INVINCIBILITY_DURATION = 7000; // 5 seconds in milliseconds
 
   // Consistent start positions for players
   var PLAYER_START_POSITIONS = {

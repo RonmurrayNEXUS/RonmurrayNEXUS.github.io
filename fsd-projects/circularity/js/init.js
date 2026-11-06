@@ -28,18 +28,28 @@ var circles = [];
             var circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
 physikz.addRandomVelocity(circle, canvas, 5, 5);
 view.addChild(circle);
-circles.push(circle);
-        } 
+circles.push(circle);       
+} 
 
+Gamification.init({
+    canvas: canvas,
+    view: view,
+    draw: draw,
+    physikz: physikz,
+    circles: circles,
+    game: game
+});
 
         // TODO 3 : Call the drawCircle() function
-drawCircle()
-drawCircle()
-drawCircle()
-drawCircle()
-drawCircle()
+// drawCircle()
+// drawCircle()
+// drawCircle()
+// drawCircle()
+// drawCircle()
         // TODO 7 : Use a loop to create multiple circles
-
+for (var i = 0; i < 50; i++) {
+ drawCircle(50);
+}
 
 
 
@@ -54,22 +64,26 @@ drawCircle()
         */ 
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-physikz.updatePosition(circles[0]);
-physikz.updatePosition(circles[1]);
-physikz.updatePosition(circles[2]);
-physikz.updatePosition(circles[3]);
-physikz.updatePosition(circles[4]);
+// physikz.updatePosition(circles[0]);
+// physikz.updatePosition(circles[1]);
+// physikz.updatePosition(circles[2]);
+// physikz.updatePosition(circles[3]);
+// physikz.updatePosition(circles[4]);
             
             // TODO 5 : Call game.checkCirclePosition() on your circles
-           game.checkCirclePosition(circles[0]);
-game.checkCirclePosition(circles[1]);
-game.checkCirclePosition(circles[2]);
-game.checkCirclePosition(circles[3]);
-game.checkCirclePosition(circles[4]);
+// game.checkCirclePosition(circles[0]);
+// game.checkCirclePosition(circles[1]);
+// game.checkCirclePosition(circles[2]);
+// game.checkCirclePosition(circles[3]);
+// game.checkCirclePosition(circles[4]);
 
             // TODO 8 / TODO 9 : Iterate over the array
-           
-            
+           for (var i = 0; i < circles.length; i++){
+physikz.updatePosition(circles[i]);
+game.checkCirclePosition(circles[i]);
+           }
+            // Update gamification features each frame
+Gamification.update();
         }
     
         /* 
@@ -82,22 +96,27 @@ game.checkCirclePosition(circles[4]);
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
-                var rightEdge = circle.x + circle.radius;
+                 rightEdge = circle.x - circle.radius;
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+            var rightEdge = circle.x - circle.radius;
+            var leftEdge = circle.x + circle.radius;
+            var topEdge = circle.y - circle.radius;
+           var bottomEdge = circle.y + circle.radius;
             if ( circle.x < 0 ) {
                 circle.x = canvas.width;
-                var leftEdge = circle.x + circle.radius;
+                 leftEdge = circle.x + circle.radius;
             }
-if ( circle.y > canvas.height ) {
+            if ( circle.y > canvas.height ) {
                 circle.y = 0;
-                var topEdge = circle.y + circle.radius;
+                 topEdge = circle.y - circle.radius;
             }
             if ( circle.y < 0 ) {
                 circle.y = canvas.height;
-                var bottomEdge = circle.y + circle.radius;
+                 bottomEdge = circle.y + circle.radius;
             }
+            
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
